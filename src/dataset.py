@@ -13,12 +13,18 @@ class MelanomaDataset(Dataset):
     """
     Dataset class for melanoma dataset
     Args:
-        df (pd.DataFrame): Dataframe containing image names and targets and meta features
-        meta_features (list): List of meta features to be used
-        transforms (albumentations.Compose): Albumentations transforms to be applied on the image
+        df (pd.DataFrame): 
+        Dataframe containing image names and targets and meta features
+
+        meta_features (list): 
+        List of meta features to be used
+
+        transforms (albumentations.Compose): 
+        Albumentations transforms to be applied on the image
     
     Returns:
-        dict: Returns a dictionary containing image, meta features and target
+        dict: 
+        Returns a dictionary containing image, meta features and target
     """
     def __init__(self, df, meta_features=None, transforms=None):
         self.df = df.reset_index(drop=True)
