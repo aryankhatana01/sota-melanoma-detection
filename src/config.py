@@ -4,9 +4,9 @@ class Config:
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     num_workers = 4
     batch_size = 16
-    image_size = 512
+    image_size = 640
     n_epochs = 10
-    lr = 1e-4
+    lr = 1e-3
     use_meta = True
     out_dim = 4
     use_scheduler = True
