@@ -1,0 +1,2 @@
+image_name,patient_id,sex,age_approx,anatom_site_general_challenge,width,height,filepath
+hello,IP23232,male,70.0,torso,1705,2450,../saved_images/Melanoma.jpg
