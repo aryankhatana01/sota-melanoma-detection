@@ -7,13 +7,13 @@ from tqdm import tqdm
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.optim import lr_scheduler
-from torch.utils.data.sampler import RandomSampler, SequentialSampler
-from torch.optim.lr_scheduler import CosineAnnealingLR
+from torch.utils.data.sampler import RandomSampler
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
 from utils import GradualWarmupSchedulerV2, get_transforms, get_meta_data
 from config import Config
 from dataset import MelanomaDataset
@@ -159,7 +159,7 @@ def run(fold, df, meta_features, n_meta_features, transforms_train, transforms_v
 
     optimizer = optim.Adam(model.parameters(), lr=Config.lr)
 
-    scheduler_cosine = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, Config.n_epochs - 1)
+    scheduler_cosine = CosineAnnealingWarmRestarts(optimizer, Config.n_epochs - 1)
     scheduler_warmup = GradualWarmupSchedulerV2(optimizer, multiplier=10, total_epoch=1, after_scheduler=scheduler_cosine)    
 
     print(len(dataset_train), len(dataset_valid))
