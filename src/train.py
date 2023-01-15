@@ -119,10 +119,30 @@ def run(fold, df, meta_features, n_meta_features, transforms_train, transforms_v
     df_train = df[df['fold'] != fold]
     df_valid = df[df['fold'] == fold]
 
-    dataset_train = MelanomaDataset(df_train, meta_features, transform=transforms_train)
-    dataset_valid = MelanomaDataset(df_valid, meta_features, transform=transforms_val)
-    train_loader = torch.utils.data.DataLoader(dataset_train, batch_size=args.batch_size, sampler=RandomSampler(dataset_train), num_workers=args.num_workers)
-    valid_loader = torch.utils.data.DataLoader(dataset_valid, batch_size=args.batch_size, num_workers=args.num_workers)
+    dataset_train = MelanomaDataset(
+        df_train, 
+        meta_features, 
+        transform=transforms_train
+    )
+
+    dataset_valid = MelanomaDataset(
+        df_valid, 
+        meta_features, 
+        transform=transforms_val
+    )
+
+    train_loader = DataLoader(
+        dataset_train, 
+        batch_size=Config.batch_size, 
+        sampler=RandomSampler(dataset_train), 
+        num_workers=Config.num_workers
+    )
+
+    valid_loader = DataLoader(
+        dataset_valid, 
+        batch_size=Config.batch_size, 
+        num_workers=Config.num_workers
+    )
 
     model = Effnet_Melanoma(
         Config.model_name, 
