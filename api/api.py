@@ -5,7 +5,7 @@ uvicorn api:app --reload
 """
 
 from typing import Union, List
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, UploadFile
 from pydantic import BaseModel
 import utils
 from fastapi.middleware.cors import CORSMiddleware
