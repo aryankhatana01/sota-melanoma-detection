@@ -1,0 +1,1 @@
+The Weights can be downloaded from [Here](https://www.kaggle.com/datasets/aryankhatana/sotamelanoma)
