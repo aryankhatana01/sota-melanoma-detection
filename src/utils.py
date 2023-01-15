@@ -60,6 +60,10 @@ def get_meta_data(df_train):
     df_train.loc[df_train['patient_id'] == -1, 'n_images'] = 1
     df_train['n_images'] = np.log1p(df_train['n_images'].values)
     # image size
+    file_paths = []
+    for i in range(len(df_train)):
+        file_paths.append(os.path.join('output/train', df_train.image_name[i] + '.jpg'))
+    df_train['filepath'] = file_paths
     train_images = df_train['filepath'].values
     train_sizes = np.zeros(train_images.shape[0])
     for i, img_path in enumerate(tqdm(train_images)):
