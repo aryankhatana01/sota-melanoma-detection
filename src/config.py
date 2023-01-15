@@ -8,6 +8,7 @@ class Config:
     n_epochs = 10
     lr = 1e-4
     use_meta = True
+    out_dim = 4
     use_scheduler = True
     scheduler = 'CosineAnnealingLR'
     scheduler_params = dict(
