@@ -57,10 +57,12 @@ def get_trans(img, I):
 def predict_single_image(image, models):
     with torch.no_grad():
         probs = torch.zeros((image.shape[0], 9)).to('cpu')
+        print(probs)
         for model in models:
             for I in range(8):
                 l = model(get_trans(image, I))
                 # print(l)
                 probs += l.softmax(1)
     probs /= len(models) * 8
-    return probs
+    prediction = torch.argmax(probs).item()
+    return prediction, probs.tolist()
