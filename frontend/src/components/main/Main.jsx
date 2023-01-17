@@ -1,15 +1,30 @@
 import React, { useRef } from "react";
 import './Main.css';
+// import FileContext from "../contexts/FileContext";
 
-const Main = () => {
+const Main = (props) => {
 
     const fileInputRef = useRef(null);
+    // const [selectedFile, setSelectedFile] = useState(null);
+    // const selectedFile = useContext(FileContext);
+
     const handleButtonClick = () => {
         fileInputRef.current.click();
     }
 
+    const handleFileChange = (e) => {
+        props.setSelectedFile(e.target.files[0]);
+        console.log(e.target.files[0]);
+    }
+
+    // const handleUpload = () => {
+    //     const formData = new FormData();
+    //     formData.append("file", selectedFile, selectedFile.name);
+    //     console.log(formData);
+    // }
+
     return (
-        <>
+        <>  
             <div className="heading-text">
                 <h1>Upload an Image to check whether you have Melanoma or not for <span className="free">free! <svg className="line" width="81" height="22" viewBox="0 0 81 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.54187 19.9319C1.6408 18.9426 3.36948 18.3704 4.07127 17.9988C7.30292 16.2879 10.549 14.6198 13.7365 12.8269C17.5755 10.6675 21.6754 9.08432 25.7871 7.53164C33.2278 4.72186 41.1902 2.90622 49.1069 2.12325C54.8677 1.5535 60.8649 1.9793 66.6482 1.9793C69.5815 1.9793 72.5398 1.86488 75.4702 1.98958C76.0279 2.01331 78.8067 1.9688 79.0895 2.53453" stroke="#81E8FF" stroke-width="3" stroke-linecap="round"/>
@@ -22,7 +37,7 @@ const Main = () => {
                 </svg>
                 
                 <div className="upload-button">
-                    <input type="file" name="file" ref={fileInputRef} style={{display: "none"}}/>
+                    <input type="file" onChange={handleFileChange} name="file" ref={fileInputRef} style={{display: "none"}}/>
                     <button className="upload-btn" onClick={handleButtonClick}>
                         <div className="upload-svg">
                             <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
