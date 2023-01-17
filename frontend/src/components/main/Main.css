@@ -76,5 +76,17 @@
     font-weight: 800;
     font-family: "Poppins";
     font-size: 2rem;
+    transition: 0.8s;
+    background-position: center;
     cursor: pointer;
 }
+
+.upload-btn:hover {
+    background: #4277FF radial-gradient(circle, transparent 1%, #4277FF 1%) center/15000%;
+}
+
+.upload-btn:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: 0s;
+  }
