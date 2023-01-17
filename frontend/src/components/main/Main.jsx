@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import './Main.css';
 
 const Main = () => {
+
+    const fileInputRef = useRef(null);
+    const handleButtonClick = () => {
+        fileInputRef.current.click();
+    }
+
     return (
         <>
             <div className="heading-text">
@@ -14,9 +20,10 @@ const Main = () => {
                 <svg className="circle1" width="314" height="314" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="157" cy="157" r="157" fill="#606060" fill-opacity="0.1"/>
                 </svg>
-
+                
                 <div className="upload-button">
-                    <button className="upload-btn">
+                    <input type="file" name="file" ref={fileInputRef} style={{display: "none"}}/>
+                    <button className="upload-btn" onClick={handleButtonClick}>
                         <div className="upload-svg">
                             <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1_15)">
