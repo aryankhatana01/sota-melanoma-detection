@@ -14,7 +14,7 @@
 }
 
 .heading-text {
-    width: 40rem;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-top: 60px;
@@ -30,6 +30,7 @@
 
 .free {
     color: #81E8FF;
+    position: relative;
 }
 
 .circle1 {
@@ -42,4 +43,10 @@
     position: absolute;
     top: 140px;
     right: -160px;
+}
+
+.line {
+    position: absolute;
+    top: 42px;
+    left: 0;
 }
