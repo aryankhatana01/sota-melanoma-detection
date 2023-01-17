@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;400&display=swap');
 
 .upload-section {
     width: 50%;
@@ -49,4 +49,32 @@
     position: absolute;
     top: 42px;
     left: 0;
+}
+
+.upload-button {
+    margin-top: 80px;
+}
+
+.upload-button p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(174, 174, 174);
+    font-family: "Poppins";
+}
+
+.upload-btn {
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
+    background-color: #4277FF;
+    border: none;
+    border-radius: 100px;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    color: white;
+    font-weight: 800;
+    font-family: "Poppins";
+    font-size: 2rem;
+    cursor: pointer;
 }

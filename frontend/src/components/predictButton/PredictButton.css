@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+.predict-button {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.predict-button-button {
+    background-color: #5142FF;
+    border: none;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 100px;
+    color: white;
+    font-weight: 800;
+    font-family: "Poppins";
+    font-size: 2.4rem;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.predict-button-button:hover {
+    transform: scale(1.08) perspective(1px);
+}
