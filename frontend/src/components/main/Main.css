@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+.upload-section {
+    width: 50%;
+    height: 18rem;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px;
+    border-style: dashed;
+    border-color: white;
+    border-radius: 36px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.heading-text {
+    width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.heading-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-top: 2rem;
+    font-family: "Poppins";
+}
+
+.free {
+    color: #81E8FF;
+}
+
+.circle1 {
+    position: absolute;
+    top: -150px;
+    left: -160px;
+}
+
+.circle2 {
+    position: absolute;
+    top: 140px;
+    right: -160px;
+}
