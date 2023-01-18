@@ -42,8 +42,8 @@ async def create_upload_file(file: UploadFile = File(...)):
     return {"filename": file.filename}
 
 @app.get("/predict/")
-async def predict():
-    path = Path(__file__).parents[1] / "saved_images" / current_filename
+async def predict(filename: str):
+    path = Path(__file__).parents[1] / "saved_images" / filename
     # print(type(str(path)))
     path = str(path)
     utils.create_df(path)
