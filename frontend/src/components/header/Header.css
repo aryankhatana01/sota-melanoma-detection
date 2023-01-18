@@ -32,6 +32,13 @@
 .header {
     text-align: center;
     padding: 1.5rem;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999999999;
+    width: 100%;
 }
 
 .logo {
