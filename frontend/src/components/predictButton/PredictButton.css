@@ -23,3 +23,19 @@
 .predict-button-button:hover {
     transform: scale(1.08) perspective(1px);
 }
+
+.detected {
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-family: "Poppins";
+    color: #ff1c1c;
+    margin-top: 50px;
+}
+
+.no-detected {
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-family: "Poppins";
+    color: #32ff09;
+    margin-top: 50px;
+}
