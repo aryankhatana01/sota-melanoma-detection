@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import './PredictButton.css';
 import FileContext from "../contexts/FileContext";
+import Loader from '../loader/Loader'
 
 
 const PredictButton = () => {
     const selectedFile = useContext(FileContext);
     const [pred, setPred] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleUpload = async () => {
         const formData = new FormData();
@@ -21,6 +23,7 @@ const PredictButton = () => {
         // const data = await resp.json();
     }
     const handlePredict = async () => {
+        setLoading(true);
         await handleUpload();
         const requestOptions = {
             method: 'GET',
@@ -29,6 +32,7 @@ const PredictButton = () => {
         const data = await resp.json();
         setPred(data["Prediction"]);
         console.log(data);
+        setLoading(false);
     }
     return (
         <div className="predict-button">
@@ -38,6 +42,8 @@ const PredictButton = () => {
             ))} */}
             <div className="pred">
                 {/* {pred} */}
+                {/* <Loader /> */}
+                {loading ? <Loader /> : null}
                 {pred===null ? null : (pred === 6 ? <div className="detected">Prediction: Melanoma Detected</div> : <div className="no-detected">Prediction: No Melanoma Detected</div>)}
             </div>
             {/* <div className="">
