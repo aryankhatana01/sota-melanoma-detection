@@ -1,5 +1,8 @@
-# sota-melanoma-detection
+# State of the Art Melanoma Detection Web App
+
 Implementation of state of the art Melanoma Detection Model using PyTorch.
+
+<img width="939" alt="Screenshot 2023-02-05 at 5 46 25 PM" src="https://user-images.githubusercontent.com/51334629/216818182-58ee4c9d-de0f-4be7-87af-caaab10141da.png">
 
 A demo can be found [Here](https://drive.google.com/file/d/12bNm0sFw0kl935zYHM9wJ13M9ViJ0Di-/view?usp=sharing)
 
